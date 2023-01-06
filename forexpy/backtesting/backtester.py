@@ -73,13 +73,3 @@ class Backtester:
         self.data_manager.next_candles()   
     
     
-if __name__ == "__main__":       
-    backtester = Backtester()
-    backtester.data_manager.load_data(pair="EURUSD", path="EURUSD_15m.csv", nrows=100)
-    backtester.open_position(position_type="buy", pair="EURUSD", stop_loss_pips=3, take_profit_pips=3)
-
-
-    while backtester.position_manager.positions:
-        backtester.update()
-    
-    
